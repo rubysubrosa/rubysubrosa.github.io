@@ -28,13 +28,79 @@
 			}
 			li {
 				list-style: none;
-				width: 50px;
-				height: 50px;
+				width: 40px;
+				height: 40x;
 				max-width: 50%;
-				margin: 50px auto;
+				margin: 40px auto;
 			}
 			li img {
 				max-width: 100%;
+			}
+
+			#logo {
+				animation: fadeUpLogo 1s ease-out 1 forwards; /* name, duration, timing function, delay (if any), iteration count, fill mode (to stick to the last frame) */
+				-webkit-animation: fadeUpLogo 1s ease-out 1 forwards;
+				-moz-animation: fadeUpLogo 1s ease-out 1 forwards;
+			}
+
+			#twitter{
+				opacity: 0;
+				animation: fadeUp 1s ease-out .20s 1 forwards;
+				-webkit-animation: fadeUp 1s ease-out .20s 1 forwards;
+				-moz-animation: fadeUp 1s ease-out .20s 1 forwards;
+			}
+
+			#tumblr{
+				opacity: 0;
+				animation: fadeUp 1s ease-out .40s 1 forwards;
+				-webkit-animation: fadeUp 1s ease-out .40s 1 forwards;
+				-moz-animation: fadeUp 1s ease-out .40s 1 forwards;
+			}
+
+			#mail{
+				opacity: 0;
+				animation: fadeUp 1s ease-out .60s 1 forwards;
+				-webkit-animation: fadeUp 1s ease-out .60s 1 forwards;
+				-moz-animation: fadeUp 1s ease-out .60s 1 forwards;
+			}
+
+
+			@keyframes fadeUpLogo {
+			    0% {
+			        transform: translateY(40px);
+			        opacity: 0;
+			    }
+			    100% {
+			        transform: translateY(0);
+			        opacity: 1;
+			    }
+			}
+			@-webkit-keyframes fadeUp {
+			    0% {-webkit-transform:translateY(40px); opacity: 0;}
+			    100% {-webkit-transform:translateY(0px); opacity: 1;}
+			}
+			@-moz-keyframes fadeUp {
+			    0% {-moz-transform: translateY(40px); opacity: 0;}
+			    100% {-moz-transform: translateY(0); opacity: 1;}
+			}
+
+			@keyframes fadeUp {
+			    0% {
+			        transform: translateY(100px);
+			        opacity: 0;
+			    }
+			    100% {
+			        transform: translateY(0);
+			        opacity: 1;
+			    }
+			}
+			@-webkit-keyframes fadeUp {
+			    0% {-webkit-transform:translateY(100px); opacity: 0;}
+			    100% {-webkit-transform:translateY(0px); opacity: 1;}
+			}
+			@-moz-keyframes fadeUp {
+			    0% {-moz-transform: translateY(100px); opacity: 0;}
+			    100% {-moz-transform: translateY(0); opacity: 1;}
 			}
 
 			@media only screen and (min-width:1000px) {
@@ -46,6 +112,10 @@
 				}
 			    li {
 			        display: inline-block;
+					list-style: none;
+					width: 50px;
+					height: 50px;
+					max-width: 50%;
 			        margin: 100px 50px;
 			    }
 			    
@@ -62,16 +132,16 @@
 	<body>
 
 			<div id="panel">
-				<img id="logo" src="logo2.png" alt="gem flower logo">
+				<img id="logo" src="logo3.png" alt="gem flower logo">
 
 			    <ul>
-			        <li>
+			        <li id="twitter">
 			        	<a href="https://www.twitter.com/rubysubrosa">
 			            <img src="twitter2.png" alt="@rubysubrosa on twitter"></a>
-		            </li><li>
+		            </li><li id="tumblr">
 				        <a href="https://rubysubrosa.tumblr.com">
 				            <img src="tumblr2.png" alt="rubysubrosa on tumblr"></a>
-		            </li><li>
+		            </li><li id="mail">
 				        <a href="mailto:rubysubrosa@gmail.com">
 				            <img src="mail2.png" alt="rubysubrosa at gmail"></a>
 		            </li>
