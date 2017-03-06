@@ -1,151 +1,336 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Ruby Sub Rosa</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>Ruby Sub Rosa</title>
 
-		<style>
-			body {
-				background: #000;
-				margin: 0;
-			}
-			#panel {
-				position: absolute;
-				top: 10%;
-				width: 100%;
-				height: 400px;
-			}
-			#logo {
-				margin: auto;
-				display: block;
-				max-width: 50%;
-			}
-			ul {
-				margin: 0;
-				padding: 0;
-				margin-top: 60px;
-			}
-			li {
-				list-style: none;
-				width: 40px;
-				height: 40x;
-				max-width: 50%;
-				margin: 40px auto;
-			}
-			li img {
-				max-width: 100%;
-			}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-			#logo {
-				animation: fadeUpLogo 1s ease-out 1 forwards; /* name, duration, timing function, delay (if any), iteration count, fill mode (to stick to the last frame) */
-				-webkit-animation: fadeUpLogo 1s ease-out 1 forwards;
-				-moz-animation: fadeUpLogo 1s ease-out 1 forwards;
-			}
+    <link href="https://fonts.googleapis.com/css?family=Alice" rel="stylesheet">
 
-			#twitter{
-				opacity: 0;
-				animation: fadeUp 1s ease-out .20s 1 forwards;
-				-webkit-animation: fadeUp 1s ease-out .20s 1 forwards;
-				-moz-animation: fadeUp 1s ease-out .20s 1 forwards;
-			}
+    <style>
+        body {
+            background: #000;
+            margin: 0;
+            font-family: 'Alice', serif;
+        }
 
-			#tumblr{
-				opacity: 0;
-				animation: fadeUp 1s ease-out .40s 1 forwards;
-				-webkit-animation: fadeUp 1s ease-out .40s 1 forwards;
-				-moz-animation: fadeUp 1s ease-out .40s 1 forwards;
-			}
+        /* For the main page */
+        
+        #panel {
+            position: absolute;
+            top: 10%;
+            width: 100%;
+            height: 400px;
+        }
+        
+        #logo {
+            margin: auto;
+            display: block;
+            max-width: 50%;
+        }
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            margin-top: 60px;
+        }
+        
+        li {
+            list-style: none;
+            width: 40px;
+            height: 40x;
+            max-width: 50%;
+            margin: 40px auto;
+        }
+        
+        li img {
+            max-width: 100%;
+            max-height: 100%;
+        }
 
-			#mail{
-				opacity: 0;
-				animation: fadeUp 1s ease-out .60s 1 forwards;
-				-webkit-animation: fadeUp 1s ease-out .60s 1 forwards;
-				-moz-animation: fadeUp 1s ease-out .60s 1 forwards;
-			}
+        /* Loading animations */
+        
+        #logo {
+            animation: fadeUpLogo 1s ease-out 1 forwards;
+            /* name, duration, timing function, delay (if any), iteration count, fill mode (to stick to the last frame) */
+            -webkit-animation: fadeUpLogo 1s ease-out 1 forwards;
+            -moz-animation: fadeUpLogo 1s ease-out 1 forwards;
+        }
+        
+        #twitter {
+            opacity: 0;
+            animation: fadeUp 1s ease-out .20s 1 forwards;
+            -webkit-animation: fadeUp 1s ease-out .20s 1 forwards;
+            -moz-animation: fadeUp 1s ease-out .20s 1 forwards;
+        }
+        
+        #tumblr {
+            opacity: 0;
+            animation: fadeUp 1s ease-out .40s 1 forwards;
+            -webkit-animation: fadeUp 1s ease-out .40s 1 forwards;
+            -moz-animation: fadeUp 1s ease-out .40s 1 forwards;
+        }
+        
+        #mail {
+            opacity: 0;
+            animation: fadeUp 1s ease-out .60s 1 forwards;
+            -webkit-animation: fadeUp 1s ease-out .60s 1 forwards;
+            -moz-animation: fadeUp 1s ease-out .60s 1 forwards;
+        }
+        
+        @keyframes fadeUpLogo {
+            0% {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @-webkit-keyframes fadeUp {
+            0% {
+                -webkit-transform: translateY(40px);
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+        
+        @-moz-keyframes fadeUp {
+            0% {
+                -moz-transform: translateY(40px);
+                opacity: 0;
+            }
+            100% {
+                -moz-transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeUp {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @-webkit-keyframes fadeUp {
+            0% {
+                -webkit-transform: translateY(100px);
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+        
+        @-moz-keyframes fadeUp {
+            0% {
+                -moz-transform: translateY(100px);
+                opacity: 0;
+            }
+            100% {
+                -moz-transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @media only screen and (min-width:1000px) {
+            #panel {
+                position: absolute;
+                top: 25%;
+                width: 100%;
+                height: 400px;
+            }
+            li {
+                display: inline-block;
+                list-style: none;
+                width: 50px;
+                height: 50px;
+                max-width: 50%;
+                margin: 100px 50px;
+            }
+            ul {
+                text-align: center;
+                margin: 0;
+            }
+        }
 
+        /* For the modal */
+        
+        h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            padding-bottom: 12px;
+        }
+        
+        p {
+            margin: 0;
+            font-size: 18px;
+            padding-bottom: 24px;
+        }
+        
+        .modal .box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            max-width: 75%;
+            max-height: 75%;
+            margin: 0;
+            padding: 12px;
+            background-color: #FFFDF5;
+        }
+        
+        .modal .content {
+            display: block;
+            background-color: #FFFDF5;
+            padding: 18px;
+        }
+        
+        .modal .close {
+            float: right;
+            display: block;
+            text-decoration: none;
+            font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.8);
+            color: #900020;
+            opacity: 0;
+            -webkit-transition: opacity .25s ease-out;
+            -moz-transition: opacity .25s ease-out;
+            transition: opacity .25s ease-out;
+            pointer-events: none;
+        }
+        
+        .modal:target {
+            outline: none;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .ctatumblr {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: inline-block;
+            height: 20px;
+            border-radius: 3px;
+            text-decoration: none;
+            color: #fff;
+            font-family: Helvetica Neue, HelveticaNeue, Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            cursor: pointer;
+            box-sizing: border-box;
+            background-color: #36465d;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        
+        .icontumblr {
+            background: url(https://assets.tumblr.com/images/flat-t-button-white.svg?v=16530f6c7cf8e12bbecfe1ef99fb88e1) no-repeat 6px 50%;
+            background-size: 9px 12px;
+            float: left;
+            padding: 0 6px 0 18px;
+            height: 20px;
+        }
+        
+        .texttumblr {
+            line-height: 20px;
+            font-weight: 700;
+            font-size: 12px;
+            float: right;
+            padding-right: 6px;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
 
-			@keyframes fadeUpLogo {
-			    0% {
-			        transform: translateY(40px);
-			        opacity: 0;
-			    }
-			    100% {
-			        transform: translateY(0);
-			        opacity: 1;
-			    }
-			}
-			@-webkit-keyframes fadeUp {
-			    0% {-webkit-transform:translateY(40px); opacity: 0;}
-			    100% {-webkit-transform:translateY(0px); opacity: 1;}
-			}
-			@-moz-keyframes fadeUp {
-			    0% {-moz-transform: translateY(40px); opacity: 0;}
-			    100% {-moz-transform: translateY(0); opacity: 1;}
-			}
+<body>
 
-			@keyframes fadeUp {
-			    0% {
-			        transform: translateY(100px);
-			        opacity: 0;
-			    }
-			    100% {
-			        transform: translateY(0);
-			        opacity: 1;
-			    }
-			}
-			@-webkit-keyframes fadeUp {
-			    0% {-webkit-transform:translateY(100px); opacity: 0;}
-			    100% {-webkit-transform:translateY(0px); opacity: 1;}
-			}
-			@-moz-keyframes fadeUp {
-			    0% {-moz-transform: translateY(100px); opacity: 0;}
-			    100% {-moz-transform: translateY(0); opacity: 1;}
-			}
+    <!-- Main page -->
+    <div id="panel">
+        <img id="logo" src="logo3.png" alt="Ruby Sub Rosa">
 
-			@media only screen and (min-width:1000px) {
-			    #panel {
-					position: absolute;
-					top: 25%;
-					width: 100%;
-					height: 400px;
-				}
-			    li {
-			        display: inline-block;
-					list-style: none;
-					width: 50px;
-					height: 50px;
-					max-width: 50%;
-			        margin: 100px 50px;
-			    }
-			    
-			    ul {
-			          text-align: center;
-			          margin: 0;
-			    }
-			}
+        <ul>
+            <li id="twitter">
+                <a href="https://www.twitter.com/rubysubrosa">
+                    <img src="twitter2.png" alt="@rubysubrosa on twitter"></a>
+            </li>
+            <li id="tumblr">
+                <a href="#nsfw">
+                    <img src="https://assets.tumblr.com/images/favicons/favicon.ico?_v=a891a6916b745ae20be499f98db2f875" id="tile" alt="rubysubrosa on tumblr"></a>
+            </li>
+            <li id="mail">
+                <a href="mailto:rubysubrosa@gmail.com">
+                    <img src="mail2.png" alt="rubysubrosa at gmail"></a>
+            </li>
+        </ul>
+    </div>
 
-		</style>
+    <!-- Modal -->
+    <div class="modal" id="nsfw">
+        <div class="box">
+            <a class="close" href="#">X</a>
+            <div class="content">
+                <h2>You'd better be 18 or older…</h2>
+                <p>…because this is NSFW in the best way.</p>
+                <a href="https://rubysubrosa.tumblr.com" class="ctatumblr">
+                    <span class="icontumblr"></span>
+                    <span class="texttumblr">
+                            Show me
+                        </span>
+                </a>
+            </div>
+        </div>
+    </div>
 
-	</head>
+    <!-- Close modal on ESC or click outside -->
+    <script type="text/javascript">
+        function modalClose() {
+            if (location.hash == '#nsfw') {
+                location.hash = '';
+            }
+        }
 
-	<body>
+        document.addEventListener('keyup', function(e) {
+            if (e.keyCode == 27) {
+                modalClose();
+            }
+        });
 
-			<div id="panel">
-				<img id="logo" src="logo3.png" alt="Ruby Sub Rosa">
+        var modal = document.querySelector('#nsfw');
+        modal.addEventListener('click', function(e) {
+            modalClose();
+        }, false);
 
-			    <ul>
-			        <li id="twitter">
-			        	<a href="https://www.twitter.com/rubysubrosa">
-			            <img src="twitter2.png" alt="@rubysubrosa on twitter"></a>
-		            </li><li id="tumblr">
-				        <a href="https://rubysubrosa.tumblr.com">
-				            <img src="tumblr2.png" alt="rubysubrosa on tumblr"></a>
-		            </li><li id="mail">
-				        <a href="mailto:rubysubrosa@gmail.com">
-				            <img src="mail2.png" alt="rubysubrosa at gmail"></a>
-		            </li>
-			    </ul>
-		    </div>
-	</body>
+        modal.children[0].addEventListener('click', function(e) {
+            e.stopPropagation();
+        }, false);
+    </script>
+</body>
+
 </html>
