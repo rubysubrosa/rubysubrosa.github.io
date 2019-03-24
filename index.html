@@ -37,10 +37,59 @@
     </script>
 
     <style>
+
+        * {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            outline: 0;
+            font-weight: normal;
+        }
+
         body {
             background: #000;
             margin: 0;
-            /*font-family: 'Alice', serif;*/
+            font-size: 100%;
+            font-family: 'Alice', serif;
+            line-height: 1.75rem;
+        }
+
+        /* Text */
+
+        h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .asterism {
+            display:table;
+            margin:0 auto;
+            padding: 1.5rem 0 1.5rem 0;
+        }
+        
+        p {
+            margin: 0;
+            /*padding-top: .25rem;*/
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+            padding-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #900020; /* Note, even if `color` attribute is in `body`, it will apply only to text */
         }
 
         /* For the main page */
@@ -58,13 +107,13 @@
             max-width: 50%;
         }
         
-        ul {
+        #panel ul {
             margin: 0;
             padding: 0;
             margin-top: 60px;
         }
         
-        li {
+        #panel li {
             list-style: none;
             width: 40px;
             height: 40x;
@@ -72,7 +121,7 @@
             margin: 40px auto;
         }
         
-        li img {
+        #panel li img {
             max-width: 100%;
             max-height: 100%;
         }
@@ -187,7 +236,11 @@
                 width: 100%;
                 height: 400px;
             }
-            li {
+            #panel ul {
+                text-align: center;
+                margin: 0;
+            }
+            #panel li {
                 display: inline-block;
                 list-style: none;
                 width: 50px;
@@ -195,26 +248,9 @@
                 max-width: 50%;
                 margin: 100px 50px;
             }
-            ul {
-                text-align: center;
-                margin: 0;
-            }
         }
 
         /* For the modal */
-        
-        h2 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: bold;
-            padding-bottom: 12px;
-        }
-        
-        p {
-            margin: 0;
-            font-size: 20px;
-            padding-bottom: 24px;
-        }
         
         .modal .box {
             position: fixed;
@@ -241,8 +277,7 @@
             display: block;
             text-decoration: none;
             font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 2rem;
             color: #000;
         }
         
@@ -254,7 +289,6 @@
             left: 0;
             z-index: 9999;
             background: rgba(0, 0, 0, 0.8);
-            color: #900020;
             opacity: 0;
             -webkit-transition: opacity .25s ease-out;
             -moz-transition: opacity .25s ease-out;
@@ -325,8 +359,10 @@
 
         <ul>
             <li id="literotica">
-                <a href="https://www.literotica.com/s/if-and-when">
-                    <img src="literotica50x50_72dpi.png" alt="rubysubrosa on literotica"></a>
+                <!-- <a href="https://www.literotica.com/s/if-and-when">
+                    <img src="literotica50x50_72dpi.png" alt="rubysubrosa on literotica"></a> -->
+                <a href="#litlist">
+                    <img src="literotica50x50_72dpi.png" id="tile" alt="rubysubrosa on literotica"></a>
             </li>
             <li id="twitter">
                 <a href="https://www.twitter.com/rubysubrosa">
@@ -343,12 +379,33 @@
         </ul>
     </div>
 
-    <!-- Modal -->
+    <!-- Literotica modal -->
+    <div class="modal" id="litlist">
+        <div class="box">
+            <a class="close" href="#">&#10005;</a>
+            <div class="content">
+                <h2>Read my stories on Literotica.</h2>
+                <span class="asterism">&#8226; &#9881; &#9784; &#10050; &#9784; &#9881; &#8226;</span>
+                <ul>
+                    <li>
+                        <a href="https://www.literotica.com/s/the-playeur">The Playeur</a>
+                        <p>Truth or dare.</p>
+                    </li>
+                    <li>
+                        <a href="https://www.literotica.com/s/if-and-when">If and When</a>
+                        <p>She has to stop a war.<br>Then a war starts in her heart.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tumblr modal -->
     <div class="modal" id="nsfw">
         <div class="box">
             <a class="close" href="#">X</a>
             <div class="content" style="font-family: 'Alice', serif;">
-                <h2>You'd better be 18 or older&#8230;</h2>
+                <h2>You&#8217;d better be 18 or older&#8230;</h2>
                 <p>&#8230;because this is NSFW in the best way.</p>
                 <a href="https://rubysubrosa.tumblr.com" class="ctatumblr">
                     <span class="icontumblr"></span>
