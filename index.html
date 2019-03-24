@@ -420,7 +420,7 @@
     <!-- Close modal on ESC or click outside -->
     <script type="text/javascript">
         function modalClose() {
-            if (location.hash == '#nsfw') {
+            if (location.hash == '#nsfw' || location.hash == '#litlist') {
                 location.hash = '';
             }
         }
@@ -432,6 +432,7 @@
         });
 
         var modal = document.querySelector('#nsfw');
+        var modal = document.querySelector('#litlist');
         modal.addEventListener('click', function(e) {
             modalClose();
         }, false);
